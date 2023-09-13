@@ -1,0 +1,127 @@
+<html>
+    <head>
+      <title>Add Map</title>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <link rel="stylesheet" href="index.css">
+  
+      <style>
+          /* Set the size of the div element that contains the map */
+  #map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
+      </style>
+  
+  
+    <script>
+      // Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+    var raigad = { lat: 18.5158, lng: 73.1822 };
+    var nashik = { lat: 19.9975, lng: 73.7898 };
+    var jalna = { lat: 19.8347, lng: 75.8816 };
+    // The map, centered at Uluru
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 6,
+      center: raigad,
+    });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({
+      position: raigad,
+      map: map,
+  
+    });
+    var infoWindow = new google.maps.InfoWindow({
+      content:'<a href=raigad.html>Raigad</a>'
+  
+    });
+  
+  
+    var marker2 = new google.maps.Marker({
+      position: nashik,
+      map: map,
+    
+    });   
+    var InfoWindow2 = new google.maps.InfoWindow({
+      content:'<a href="www.google.com">Nashik</a>'
+  
+    });
+  
+  
+    var marker3 = new google.maps.Marker({
+      position: jalna,
+      map: map,
+    
+    }); 
+    
+    var InfoWindow3 = new google.maps.InfoWindow({
+      content:'<a href"www.google.com">Raigad</a>'
+  
+    });
+  
+   
+  
+  
+  
+  
+    marker.addListener('click', function() {
+      infoWindow.open(map, marker);
+    } );
+  }
+  
+  function initMap2() {
+    // The location of Uluru
+    var nashik = { lat: 19.9975, lng: 19.9975 };
+    // The map, centered at Uluru
+    var map2 = new google.maps.Map2(document.getElementById("map2"), {
+      zoom: 2,
+      center: nashik,
+    });
+    // The marker, positioned at Uluru
+    var marker2 = new google.maps.Marker2({
+      position: nashik,
+      map: map2,
+    });
+  
+    const infoWindow2 = new google.maps.InfoWindow2({
+      content:'<h2>Nashik</h2>'
+  
+    });
+  
+    
+  
+  
+  
+    marker.addListener('click', function() {
+      infoWindow.open(map, marker);
+    } )
+  }
+  
+  window.initMap = initMap;
+  
+  
+  
+    </script>
+  
+   
+    </head>
+    <body>
+      <h3>My Google Maps Demo</h3>
+      <!--The div element for the map -->
+      <div id="map"></div>
+  
+  
+      <!-- 
+       The `defer` attribute causes the callback to execute after the full HTML
+       document has been parsed. For non-blocking uses, avoiding race conditions,
+       and consistent behavior across browsers, consider loading using Promises
+       with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQMHa6FlzJt4FubHeP5UIoT6_5kZaUUJE&callback=initMap&v=weekly"
+        defer
+      ></script>
+    </body>
+  </html>

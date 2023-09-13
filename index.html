@@ -1,0 +1,206 @@
+<html>
+    <head>
+      <title>Heritage Site</title>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <link rel="stylesheet" href="index.css">
+      <link rel="icon" type="image/png" href="Images/fevicon.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+      <style>
+          /* Set the size of the div element that contains the map */
+  #map {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 110%;
+            height: 1200px;
+  }
+      </style>
+  
+  
+    <script>
+      // Initialize and add the map
+  function initMap() {
+    // The locations of Maharashtra
+
+    var maharashtra = { lat: 19.7515, lng:  75.7139};
+    var raigad = { lat: 18.5158, lng: 73.1822 };
+    var pratapgad = { lat: 17.9345, lng: 73.5783 };
+    var shivneri = { lat: 19.1930, lng: 73.8555 };
+    var rajgad = { lat: 18.2466, lng: 73.6822 };
+    var sindhudurg = { lat: 16.0434, lng: 73.4610 };
+    var vijaydurg = { lat: 16.5565, lng: 73.3333 };
+
+
+    // The map, centered at Maharastra
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 6.5,
+      center: maharashtra,
+    });
+    // The marker, positioned at Raigad
+    var marker = new google.maps.Marker({
+      position: raigad,
+      map: map,
+  
+    });
+
+    //info window for raigad
+    var infoWindow = new google.maps.InfoWindow({
+      content: '<div style="text-align: center;"><img src="Images/Raigad" style="display: block; margin: 0 auto;"><h5><a href="raigad.html"><h4 class="none"><b>Raigad</b></h4></a></h5><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia, reprehenderit in numquam molestiae expedita corporis</p></div>'
+      
+  
+    });
+
+    //listner for raigad    
+    marker.addListener('click', function() {
+      infoWindow.open(map, marker)
+    } );
+
+    
+  
+    //marker postioned at pratapgad
+    var marker2 = new google.maps.Marker({
+      position: pratapgad,
+      map: map,
+    
+    });   
+    var infoWindow2 = new google.maps.InfoWindow({
+      content: '<div style="text-align: center;"><img src="Images/Pratapgad" style="display: block; margin: 0 auto;"><h5><a href="pratapgad.html"><h4 class="none"><b>Pratapgad</b></h4></a></h5><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia, reprehenderit in numquam molestiae expedita corporis</p></div>'
+  
+    });
+
+    marker2.addListener('click', function() {
+      infoWindow2.open(map, marker2)
+    } );
+
+     
+
+    //marker positioned at shivneri
+    var marker3 = new google.maps.Marker({
+      position: shivneri,
+      map: map,
+    
+    }); 
+    
+    var infoWindow3 = new google.maps.InfoWindow({
+      content: '<div style="text-align: center;"><img src="Images/Shivneri" style="display: block; margin: 0 auto;"><h5><a href="shivneri.html"><h4 class="none"><b>Shivneri</b></h4></a></h5><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia, reprehenderit in numquam molestiae expedita corporis</p></div>'
+  
+    });
+
+    marker3.addListener('click', function() {
+      infoWindow3.open(map, marker3)
+    } );
+
+
+
+
+
+    //marker positioned at rajgad
+    var marker4 = new google.maps.Marker({
+      position: rajgad,
+      map: map,
+    
+    });   
+    var infoWindow4 = new google.maps.InfoWindow({
+      content: '<div style="text-align: center;"><img src="Images/Rajgad" style="display: block; margin: 0 auto;"><h5><a href="rajgad.html"><h4 class="none"><b>Rajgad</b></h4></a></h5><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia, reprehenderit in numquam molestiae expedita corporis</p></div>'
+  
+    });
+
+
+    marker4.addListener('click', function() {
+      infoWindow4.open(map, marker4)
+    } );
+
+  
+     
+    //marker positioned at sindhudurg
+    var marker5 = new google.maps.Marker({
+      position: sindhudurg,
+      map: map,
+    
+    });   
+    var infoWindow5 = new google.maps.InfoWindow({
+      content: '<div style="text-align: center;" background-color: #F0F0F0; color: #333;"><img src="Images/Sindhudurg" style="display: block; margin: 0 auto;"><h5><a href="sindhudurg.html" style="color: #007bff;><h4 class="none"><b>Sindhudurg</b></h4></a></h5><p style="margin: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia, reprehenderit in numquam molestiae expedita corporis</p></div>'
+  
+    });
+
+    marker5.addListener('click', function() {
+      infoWindow5.open(map, marker5)
+    } );
+
+
+     
+    
+    //marker positoned at vijaydurg
+    var marker6 = new google.maps.Marker({
+      position: vijaydurg,
+      map: map,
+      
+    });   
+    var infoWindow6 = new google.maps.InfoWindow({
+    content: '<div style="text-align: center;"><img src="Images/Vijaydurg" style="display: block; margin: 0 auto;"><h4 class="none"><a href="vijaydurg.html">Vijaydurg</a></h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia, reprehenderit in numquam molestiae expedita corporis</p></div>'
+});
+
+
+
+
+  
+  
+   
+    marker6.addListener('click', function() {
+      infoWindow6.open(map, marker6)
+    } );
+  }
+  
+  
+  
+  window.initMap = initMap;
+  
+  
+  
+    </script>
+  
+   
+    </head>
+    <body>
+      
+      <header class="sticky-header">
+        <h3><b>Heritage Sites</b></h3>
+      </header> 
+      
+     <!-- <div class="hero">
+        <nav>
+          <ul>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">Modern</a></li>
+            <li><a href="#">Contemptory</a></li>
+            <li><a href="#">Affordable</a></li>
+          </ul>
+          
+        </nav>
+      </div> 
+      -->
+
+      <!--The div element for the map -->
+      <div id="map"></div>
+      
+  
+  
+      <!-- 
+       The `defer` attribute causes the callback to execute after the full HTML
+       document has been parsed. For non-blocking uses, avoiding race conditions,
+       and consistent behavior across browsers, consider loading using Promises
+       with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQMHa6FlzJt4FubHeP5UIoT6_5kZaUUJE&callback=initMap&v=weekly"
+        defer>
+      </script>
+
+           
+      
+      
+
+    </body>
+  </html>
